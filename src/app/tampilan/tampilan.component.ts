@@ -101,6 +101,14 @@ export class TampilanComponent {
         });
   
         this.excelData = categorizedData;
+        if (Object.keys(this.excelData).length === 0) {
+          Swal.fire({
+            icon: 'warning',
+            title: 'Data Tour Tidak Ditemukan',
+            text: 'Pastikan file yang diunggah berisi data yang sesuai.',
+          });
+          return;
+        }      
         console.log('Excel Data:', this.excelData);
       };
   
